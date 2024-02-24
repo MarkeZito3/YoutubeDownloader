@@ -1,55 +1,67 @@
 import pytube
+import os
 
-def __eliminar_caracteres_especiales__(cadena):
+# Private functions
+def __delete_special_characters__(string):
     '''Delete caracters not available to save a file
-    :param cadena: In this parameter you can put your string
+    :param string: In this parameter you can put your string
     :returns: It will be removed from the string the next caracters ```'\\', '/', ':', '?', '"', '<', '>'```
     '''
-    caracteres_a_eliminar = ['\\', '/', ':', '?', '"', '<', '>', '|']
-    for caracter in caracteres_a_eliminar:
-        cadena = cadena.replace(caracter, '')
-    return cadena
+    chat_to_delete = ['\\', '/', ':', '?', '"', '<', '>', '|']
+    for caracter in chat_to_delete:
+        string = string.replace(caracter, '')
+    return string
 
-def download_video(url=str, name="Unknown"):
+# Exportable functions
+def download_video(url, path=None, name="Unknown"):
     '''Procedure to download videos to mp4 files uwu
     
     :param url: This is url of a youtube video
+    :param path: directory where you want to download the video files, by default the directory will be `\\videos` on this file
     :param name: This is the name of the video that you want, if this is not avalible to use, the name will be `Unknown.mp4`
     '''
 
-    youtube_url = url
-
-    youtubeVideo = pytube.YouTube(youtube_url)
+    youtubeVideo = pytube.YouTube(url)
     
     video = youtubeVideo.streams.get_highest_resolution()
 
-    name = pytube.YouTube(youtube_url).title
-    name = __eliminar_caracteres_especiales__(name)
-
+    name = youtubeVideo.title
+    name = __delete_special_characters__(name)
+    if path is None:
+        path = os.getcwd()+'\\videos'
+    else:
+        path = path+'\\videos'
     try:
-        video.download(filename=f'{name}.mp4')
+        video.download(filename=f'{name}.mp4',output_path=path)
     except:
-        print(name+'\n')
         name="Unknown"
-    video.download(filename=f'{name}.mp4')
+    video.download(filename=f'{name}.mp4',output_path=path)
 
-def download_audio(url):
+def download_audio(url, path=None, name="Unknown"):
     '''Procedure to download audio to mp4 file uwu
     
     :param url: (str) url of a youtube video
+    :param path: directory where you want to download the audio files, by default the directory will be `\\audios` on this file
+    :param name: This is the name of the video that you want as audio, if this is not avalible to use, the name will be `Unknown.mp4`
     '''
 
-    youtube_url = url
-
-    youtubeVideo = pytube.YouTube(youtube_url)
+    youtubeVideo = pytube.YouTube(url)
 
     audio = youtubeVideo.streams.get_audio_only()
     
-    name = pytube.YouTube(youtube_url).title
+    name = youtubeVideo.title
 
-    audio.download(filename=f'{name}.mp4')
+    if path is None:
+        path = os.getcwd()+'\\audios'
+    else:
+        path = path+'\\audios'
+
+    try:
+        audio.download(filename=f'{name}.mp4',output_path=path)
+    except:
+        name="Unknown"
+    audio.download(filename=f'{name}.mp4',output_path=path)
 
 if (__name__ == "__main__"):
-    download_video(url="https://www.youtube.com/watch?v=QPIywLfRC40&ab_channel=elWacky")
-
-    # download_video("https://www.youtube.com/watch?v=rkm7mUJr_6A&ab_channel=FastyDubs")
+    path = os.getcwd()+'\\videos'
+    print(path)
