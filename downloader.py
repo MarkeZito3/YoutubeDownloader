@@ -62,6 +62,30 @@ def download_audio(url, path=None, name="Unknown"):
         name="Unknown"
     audio.download(filename=f'{name}.mp4',output_path=path)
 
+def ableToDownload(url):
+    try:
+        youtubeVideo = pytube.YouTube(url)
+        youtubeVideo.check_availability()
+        return True
+    except Exception as e:
+        # print(e)
+        return False
+
+def file_exist(files):
+    if os.path.exists(files):
+        if os.path.isfile(files):
+            return True
+        else:
+            return False
+    else:
+        return False
+
+def title(url):
+    youtubeVideo = pytube.YouTube(url)
+    return youtubeVideo.title
 if (__name__ == "__main__"):
-    path = os.getcwd()+'\\videos'
-    print(path)
+    # archivo = os.getcwd()+"\\videos\\We Built the Internet in Minecraft.mp4"
+    # print(file_exist(archivo))
+    # print("\n",archivo)
+
+    print(ableToDownload("https://flet.dev/docs/guides/python/getting-started"))

@@ -17,6 +17,6 @@ pip install -r requirements.txt
 ## Step 3: Open the program with the next command
 
 ```
-python programa.py
+python menu.py
 ```
-or execute the `Downloader.exe` aplication OwO
+<!-- or execute the `Downloader.exe` aplication OwO -->
