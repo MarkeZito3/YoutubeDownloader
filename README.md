@@ -3,7 +3,7 @@
 ## Just Execute the ``Downloader.exe``:
 When you execute the ``Downloader.exe`` you will see the next window:
 
-![gui]([https://raw.githubusercontent.com/MarkeZito3/YoutubeDownloader/assets](https://raw.githubusercontent.com/MarkeZito3/YoutubeDownloader/master/assets)/gui.png)
+![gui](https://raw.githubusercontent.com/MarkeZito3/YoutubeDownloader/master/assets/gui.png)
 
 # Notation:
 1. If you want to download videos/audios of youtube that have "age restrictions" you'll need to login but, this feature is not available to this version `v-0.0.1-Alpha`.
