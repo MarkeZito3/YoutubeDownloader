@@ -12,11 +12,13 @@ from tkinter import *
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
-OUTPUT_PATH = Path(__file__).parent
-# print(OUTPUT_PATH)
-FRAME_0 = str(OUTPUT_PATH)+"\\build\\assets\\frame0"
-ASSETS_PATH = OUTPUT_PATH / Path(FRAME_0)
-# print(ASSETS_PATH)
+OUTPUT_PATH = r"D:\Documentos\programación\python\youtube_downloader\build\assets\frame0"
+print(OUTPUT_PATH)
+# FRAME_0 = str(OUTPUT_PATH)+"\\build\\assets\\frame0"
+ASSETS_PATH = OUTPUT_PATH / Path(OUTPUT_PATH)
+print(ASSETS_PATH)
+print(r"D:\Documentos\programación\python\youtube_downloader\build\assets\frame0")
+
 
 descargando = ""
 

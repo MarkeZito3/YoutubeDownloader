@@ -1,12 +1,28 @@
-# How to use ✨ Youtube Python Downloader ✨
+# How to use ✨ Youtube Python Downloader 0.0.1 Alpha ✨
 
-## Step 1: Clone this repository
+## Just Execute the ``Downloader.exe``:
+When you execute the ``Downloader.exe`` you will see the next window:
+
+![gui]()
+
+# Notation:
+1. If you want download videos/audios of youtube videos that have "age restrictions" you'll need to login but, this feature is not available to this version `v-0.0.1-Alpha`.
+
+    ![login gui]()
+
+2. Also, video and audio previews are not yet available.
+
+    ![folders]()
+
+# Run the code by console command:
+
+### Step 1: Clone this repository
 
 ```
 git clone https://github.com/MarkeZito3/YoutubeDownloader
 ```
 
-## Step 2: Install all dependencies with the following commands
+### Step 2: Install all dependencies with the following commands
 
 (little disclaimer, you need to have [python](https://www.python.org/) installed)
 
@@ -14,7 +30,7 @@ git clone https://github.com/MarkeZito3/YoutubeDownloader
 pip install -r requirements.txt
 ```
 
-## Step 3: Open the program with the next command
+### Step 3: Open the program with the next command
 
 ```
 python menu.py
