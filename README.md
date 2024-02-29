@@ -6,7 +6,7 @@ When you execute the ``Downloader.exe`` you will see the next window:
 ![gui](https://raw.githubusercontent.com/MarkeZito3/YoutubeDownloader/master/build/assets/frame0/gui.png)
 
 # Notation:
-1. If you want download videos/audios of youtube videos that have "age restrictions" you'll need to login but, this feature is not available to this version `v-0.0.1-Alpha`.
+1. If you want to download videos/audios of youtube that have "age restrictions" you'll need to login but, this feature is not available to this version `v-0.0.1-Alpha`.
 
     ![login gui](https://raw.githubusercontent.com/MarkeZito3/YoutubeDownloader/master/build/assets/frame0/login.png)
 
@@ -24,7 +24,7 @@ git clone https://github.com/MarkeZito3/YoutubeDownloader
 
 ### Step 2: Install all dependencies with the following commands
 
-(little disclaimer, you need to have [python](https://www.python.org/) installed)
+(disclaimer, you need to have [python](https://www.python.org/) installed)
 
 ```
 pip install -r requirements.txt

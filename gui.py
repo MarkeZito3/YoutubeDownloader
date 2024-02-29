@@ -4,20 +4,21 @@
 
 # from ...modules.downloader import downloader
 import asyncio
-from modules.downloader import downloader
+from downloader_class import YouTubeDownloader
 from pathlib import Path
 
 from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
+downloader = YouTubeDownloader()
 
-OUTPUT_PATH = r"D:\Documentos\programación\python\youtube_downloader\build\assets\frame0"
-print(OUTPUT_PATH)
-# FRAME_0 = str(OUTPUT_PATH)+"\\build\\assets\\frame0"
-ASSETS_PATH = OUTPUT_PATH / Path(OUTPUT_PATH)
-print(ASSETS_PATH)
-print(r"D:\Documentos\programación\python\youtube_downloader\build\assets\frame0")
+OUTPUT_PATH = Path.cwd()
+# print(OUTPUT_PATH)
+FRAME_0 = str(OUTPUT_PATH)+r"\assets"
+ASSETS_PATH = OUTPUT_PATH / Path(FRAME_0)
+# print(Path(FRAME_0))
+# print(r"D:\Documentos\programación\python\youtube_downloader\build\assets\frame0")
 
 
 descargando = ""
@@ -37,7 +38,7 @@ def msg_audio():
 
 def handler_download_video():
     try:
-        downloader.download_video(entry_1.get())
+        downloader.download_video(url=entry_1.get())
     except Exception as e:
         print("no ha colocado ningún link uwu")
         print(e)
@@ -46,7 +47,7 @@ def handler_download_audio():
     global descargando
     descargando = "descargando audio..."
     try:
-        downloader.download_audio(entry_1.get())
+        downloader.download_audio(url=entry_1.get())
     except Exception as e:
         print(e)
 
@@ -74,6 +75,7 @@ def on_button_click_audio():
 
 window = Tk()
 
+window.title = "Downloader"
 window.geometry("1296x720")
 window.configure(bg = "#F0F0F0")
 
